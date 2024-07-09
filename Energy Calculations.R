@@ -1,6 +1,6 @@
 rm(list = ls()) #clear memory
 detach(Latitudinal)
-Latitudinal <- read.csv("~/Documents/Hemi DSVM Final/Datasets and Calculations/Hemigrapsus Latitudinal Project.csv", header = T) #import data
+Latitudinal <- read.csv("~/Hemigrapsus Latitudinal Project.csv", header = T) #import data. Note: user will have to edit file path. 
 attach(Latitudinal) #attach the file so column names can be called independently of file name
 names(Latitudinal) #list column names in file
 
