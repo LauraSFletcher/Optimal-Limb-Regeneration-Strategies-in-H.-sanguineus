@@ -45,28 +45,6 @@ for (t in rev(T_times)) { #For every month in a 3 year lifespan (1-36); loop thr
           egg_count <- max(V) #Pull the highest egg count from the fitness vector (V).
           optimal <- which.max(V) #Report the position of the highest egg_count in the fitness vector (V); i.e., the optimal strategy. 
           
-          #Allocation to reproduction as a function of body size
-          if (optimal != 0 || optimal != 11) {
-            if (optimal == 1) {
-              proportion <- 1
-            }
-            
-            else if (optimal == 2 || optimal == 3) {
-              proportion <- 2/3
-            }
-            
-            else if (optimal == 4 || optimal == 5 || optimal == 6) {
-              proportion <- 1/3
-            }
-            
-            else if (optimal == 7 || optimal == 8 || optimal == 9 || optimal == 10) {
-              proportion <- 0
-            }
-            
-            E_proportion <- c(E_proportion,proportion)
-            body_size <- c(body_size,mass)
-          }
-          
           if (t < T) { #Fitness array already has values when t = T; this is end of life, so reproductive output = 0; only index for values of t less than T.
             F[t,mass,c,i,p] <- egg_count #Index fitness array with highest egg count.
           }
@@ -91,7 +69,5 @@ for (t in rev(T_times)) { #For every month in a 3 year lifespan (1-36); loop thr
   }#Mass loop
   print(t) #Print month to keep track of model as it runs.
 }#Time (month) loop
-graph(c,p,i) #Function to graph results.  
-   
-boxplot(E_proportion~body_size,ylab="Proportion of Energy Allocated to Reproduction",xlab="Body Size (1-12; 0.25-3 g)")
+graph(c,p,i) #Function to graph results. 
 
