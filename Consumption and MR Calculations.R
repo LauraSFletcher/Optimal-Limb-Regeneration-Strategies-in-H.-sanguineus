@@ -24,7 +24,7 @@ summary(lm(P~Body,data=Latitude))
 
 rm(list = ls()) ##resets R so that nothing transfers over from past iterations
 detach(Maine)
-Maine <- read.csv("~/Maine Data.csv", header = T) #import data
+Maine <- read.csv("~/Maine Data.csv", header = T) #import data. Note: user will have to edit file path. 
 attach(Maine) #attach the file so column names can be called independently of file name
 names(Maine) #list column names in file
 
