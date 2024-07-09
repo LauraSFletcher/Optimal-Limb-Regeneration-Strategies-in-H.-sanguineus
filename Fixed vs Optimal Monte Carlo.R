@@ -7,12 +7,9 @@ source("Strategy Functions.R") #Sourcing for strategies.
 source("Fecundity Function (Monte Carlo).R") #Sourcing for fecundity function. 
 
 ### COMPARISON DATA ###
-data <- read.csv("~/Documents/Hemi DSVM Final/Datasets and Calculations/MC Comparison Data.csv", header = T) #import data
+data <- read.csv("~/MC Comparison Data.csv", header = T) #import data. Note: user will have to edit file path to the place where this data file is stored. 
 attach(data) #attach the file so column names can be called independently of file name
 names(data) #list column names in file
-
-#try using wet to dry conversions from latitudinal
-#start energy reserves by hepato/ovary mass of gravid individuals as a function of body size
 
 ### SETTING UP TEST VECTORS ###
 Body <- data$Start_BodyMass #Body size for each test individual at beginning of experiment and simulations. 
