@@ -1,9 +1,9 @@
 ### MODEL PARAMETERIZATION ###
 
-##Consumption and Distributions; Latitudinal Project
+##Consumption; Latitudinal Project
 
 rm(list = ls()) ##resets R so that nothing transfers over from past iterations
-Latitude <- read.csv("~/Documents/Hemi DSVM Final/Datasets and Calculations/Hemigrapsus Latitudinal Project.csv", header = T) #import data
+Latitude <- read.csv("~/Hemigrapsus Latitudinal Project.csv", header = T) #import data. Note: user will have to edit file path. 
 attach(Latitude) #attach the file so column names can be called independently of file name
 names(Latitude) #list column names in file
 
@@ -14,11 +14,6 @@ NH <- subset(Latitude, CollectionSite=="NH")
 summary(nls(Gut~a*exp(b*Body),start=c(a=0.1,b=2),data=NH))
 
 C_g <- 0.019610*exp(0.470617*bodymass)
-
-#Distributions for Monte Carlo simulations (fixed vs. optimal). 
-mean(Body) 
-sd(Body) 
-#Mean = 1.396818 and Standard Deviation = 0.7582952
 
 summary(lm(P~Body,data=Latitude))
 
