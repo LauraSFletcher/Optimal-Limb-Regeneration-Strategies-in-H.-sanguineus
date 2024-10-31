@@ -31,11 +31,11 @@ variables, which are used in the main model for loops. Finally, the Strategy Fun
 code. Each function in this file, one for each of the ten strategies, calculates how body mass, energy reserves, and regeneration should change
 on a daily basis according to their respective energy allocation strategy.
 
-There are four additional files associated with the Monte Carlo simulations: "Diet Quality Monte Carlo.R", "Fixed vs. Optimal Monte Carlo.R",
-"Seasonal, Body Size, Injury Monte Carlo.R", and "Variables (Monte Carlo).R." Run the first three of these files to obtain the Monte Carlo simulation
-results, including figures and .csv files for model-predicted reproductive output. The Monte Carlo variables file differs from the DSVM variables file
-because it does not include injury severity (or, as it appears in the code, "missing_limbs") and diet quality, which are determined within the code of
-the diet quality and seasonal, body size, and injury severity Monte Carlo simulations for each simulated individual. 
+There are two additional files associated with the Monte Carlo simulations: "Fixed vs. Optimal Monte Carlo.R", and "Variables (Monte Carlo).R." 
+Run the first of these files to obtain the Monte Carlo simulation results, including figures and .csv files for model-predicted reproductive 
+output. The Monte Carlo variables file differs from the DSVM variables file because it does not include injury severity (or, as it appears in the 
+code, "missing_limbs") and diet quality, which are determined within the code of the diet quality and seasonal, body size, and injury severity Monte 
+Carlo simulations for each simulated individual. 
 
 
 
