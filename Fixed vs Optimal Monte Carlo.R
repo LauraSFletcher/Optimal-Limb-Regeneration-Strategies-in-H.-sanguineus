@@ -343,8 +343,8 @@ for (allocation in 1:3) { #Loop over 3 different energy allocation strategies.
             }
           }
           
-          else if (allocation == 2) { #k = 0.2, evenly split
-            kappa <- 0.2
+          else if (allocation == 2) { #k = 0.9, evenly split (based on Talbot et al., 2019, kappa value for Carcinus maenas)
+            kappa <- 0.9
             P_energy <- fixedstrat(kappa,E,P_energy,bodymass,regeneration)[[1]]
             bodymass <- fixedstrat(kappa,E,P_energy,bodymass,regeneration)[[2]]
             regeneration <- fixedstrat(kappa,E,P_energy,bodymass,regeneration)[[3]]
@@ -507,11 +507,7 @@ for (crab in 1:40) {
 
 #Testing whether regression intercepts and slopes are significantly different from the observed for each strategy type w/ ANCOVA
 summary(lm(optimal_clutches~optimal_sizes*data_type))
-#For the optimal strategy, difference in slope and intercept not significant.
 
-summary(lm(fixed1_clutches~fixed1_sizes*data_type))
-#Also no significant difference. 
+summary(lm(fixed1_clutches~fixed1_sizes*data_type)) 
 
 summary(lm(fixed2_clutches~fixed2_sizes*data_type))
-#Also no significant difference. Visually, optimal provides closest match to observed, but not close enough to be significantly better.
-#More complex optimal model may only be preferable when extreme accuracy is required for predictions
